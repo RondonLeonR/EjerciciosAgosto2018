@@ -18,7 +18,7 @@ int main()
             contMay++;
         }
     }
-    printf("Hay %d numeros mayores a cero",contMay);
+    printf("Hay %d numeros mayores a cero\n",contMay);
     printf("Hay %d numeros menores a cero",contMen);
     return 0;
 }
