@@ -11,12 +11,13 @@
 
 /**2da Forma, Definicion de tipo de dato
 **/
-typedef struct{
+typedef struct
+{
     int legajo;
     char nombre[20];
     char sexo;
     float sueldo;
-}eEmpleado;
+} eEmpleado;
 
 void mostrarEmpleado(eEmpleado employee);
 
@@ -60,7 +61,8 @@ int main()
     return 0;
 }
 /**Paso una COPIA de la estructura**/
-void mostrarEmpleado(eEmpleado employee){
+void mostrarEmpleado(eEmpleado employee)
+{
 
     printf("%d %s %c %.2f\n",employee.legajo,employee.nombre,employee.sexo,employee.sueldo);
 

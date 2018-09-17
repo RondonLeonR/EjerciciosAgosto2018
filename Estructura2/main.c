@@ -1,19 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct{
+typedef struct
+{
     int dia;
     int mes;
     int anio;
-}eFecha;
+} eFecha;
 
-typedef struct{
+typedef struct
+{
     int legajo;
     char nombre[20];
     char sexo;
     float sueldo;
     eFecha fechaIngreso;
-}eEmpleado;
+} eEmpleado;
 
 int main()
 {
