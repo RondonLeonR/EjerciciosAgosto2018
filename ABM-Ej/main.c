@@ -2,16 +2,24 @@
 #include <stdlib.h>
 #include "persona.h"
 
+
+
 #define CANT 3
+#define OCUP 2
 
 
 int main()
 {
     char seguir='s';
     int opcion=0;
-    EPersona personas[CANT];
+    EPersona personas[CANT] =
+    {
+            {"Lopez","A",1111,18,9,2018, OCUP, 1},
+            {"Lopez","J",2222,19,10,2017, OCUP, 2},
+            {"A","Juan",3333,20,12,2010, OCUP, 3}
+    };
 
-    init(personas, CANT);
+    //init(personas, CANT);
 
     do
     {
@@ -33,8 +41,10 @@ int main()
             baja(personas, CANT);
             break;
         case 3:
+            modificar(personas, CANT);
             break;
         case 4:
+            ordenamiento(personas, CANT);
             break;
         case 5:
             seguir = 'n';

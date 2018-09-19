@@ -35,6 +35,10 @@ void alta(EPersona[], int len);
 
 void baja(EPersona[], int len);
 
+void modificar(EPersona[],int len);
+
+void ordenamiento(EPersona[],int len);
+
 void mostrarUsuario(EPersona usuario);
 
 void mostrarArrayDeUsuarios(EPersona lista[], int);

@@ -37,7 +37,7 @@ void mostrarUsuario(EPersona usuario)
 {
 
 
-    printf("\n%d\t%s\t%s\t\t%ld\t %02d/%02d/%04d\n",usuario.id,usuario.nombre,usuario.apellido,usuario.dni,usuario.feNac.dia,usuario.feNac.mes,usuario.feNac.anio);
+    printf("\n%d\t%s\t%s\t%ld\t\t%02d/%02d/%04d\n",usuario.id,usuario.nombre,usuario.apellido,usuario.dni,usuario.feNac.dia,usuario.feNac.mes,usuario.feNac.anio);
 
 
 }
@@ -46,7 +46,7 @@ void mostrarArrayDeUsuarios(EPersona lista[], int tam)
 {
 
     int i;
-    printf("ID\tNombre\tApellido\tDNI\tFecha de Nac.\n");
+    printf("ID\tNombre\t\tApellido\tDNI\tFecha de Nac.\n");
     for(i=0; i<tam; i++)
     {
         if(lista[i].isEmpty==OCUP)
@@ -81,7 +81,8 @@ void alta(EPersona lista[], int len)
 
     if(index == -1)
     {
-        printf("No hay mas lugar\n");
+        printf("No hay mas lugar\n\n");
+        system("pause");
     }
     else
     {
@@ -118,7 +119,7 @@ void baja(EPersona lista[], int len)
     char opc;
     system("cls");
     mostrarArrayDeUsuarios(lista,len);
-    printf("\nIngrese el DNI del Usuario a dar de Baja: ");
+    printf("\nIngrese el DNI del Usuario a dar de Baja: \n");
     scanf("%d",&dniIngresado);
     idEncontrado=buscarPorDni(lista,dniIngresado,len);
     system("cls");
@@ -131,7 +132,7 @@ void baja(EPersona lista[], int len)
     {
         printf("Usuario Encontrado: ");
         mostrarUsuario(lista[idEncontrado]);
-        printf("\n\nDesea dar de Baja? s ò n");
+        printf("\n\nDesea dar de Baja? s/n\n");
         fflush(stdin);
         scanf("%c",&opc);
         if(opc=='n')
@@ -149,16 +150,111 @@ void baja(EPersona lista[], int len)
 }
 
 
-void modificar(EPersona lista[],int len){
+void modificar(EPersona lista[],int len)
+{
     system("cls");
-    int DniIngresado,IdEncontrado;
+    int DniIngresado,IdEncontrado,opcSwitch,opc;
 
     mostrarArrayDeUsuarios(lista,len);
     printf("Ingrese El DNI del Usuario a Modificar: ");
     scanf("%d",&DniIngresado);
     IdEncontrado=buscarPorDni(lista,DniIngresado,len);
+    system("cls");
+    if(IdEncontrado==-1)
+    {
+        printf("\nUsuario no Encontrado.\n");
+        system("pause");
+    }
+    else
+    {
+        printf("Usuario Encontrado: ");
+        mostrarUsuario(lista[IdEncontrado]);
+        printf("\n\nDesea dar Modificar? s ò n");
+        fflush(stdin);
+        scanf("%c",&opc);
+        if(opc=='n')
+        {
+            printf("\n\n\tOperacion Cancelada.\n\n");
+            system("pause");
+        }
+        else
+        {
+            printf("\n\nQue desea Modificar: ");
+            printf("\n1-Nombre\n2-Apellido\n3-DNI\n4-Fecha de Nacimiento\n\n");
+            scanf("%d",&opcSwitch);
+            switch(opcSwitch)
+            {
+            case 1:
+            {
+                printf("\nIngrese Nuevo Nombre: ");
+                fflush(stdin);
+                gets(lista[IdEncontrado].nombre);
+                break;
+            }
+            case 2:
+            {
+                printf("\nIngrese Nuevo Apellido: ");
+                fflush(stdin);
+                gets(lista[IdEncontrado].apellido);
+                break;
+            }
+            case 3:
+            {
+                printf("\nIngrese Nuevo DNI: ");
+                fflush(stdin);
+                scanf("%d",&lista[IdEncontrado].dni);
+                break;
+            }
+            case 4:
+            {
+                printf("\nIngrese Nueva Fecha de Nacimiento ");
+                printf("\nDia: ");
+                fflush(stdin);
+                scanf("%d",&lista[IdEncontrado].feNac.dia);
+                printf("\nMes: ");
+                fflush(stdin);
+                scanf("%d",&lista[IdEncontrado].feNac.mes);
+                printf("\nAnio: ");
+                fflush(stdin);
+                scanf("%d",&lista[IdEncontrado].feNac.anio);
+                break;
+            }
+            }
+
+            printf("Usuario Modificado con Exito.\n\n");
+            system("pause");
+        }
+    }
+
+}
+
+void ordenamiento(EPersona lista[],int len)
+{
+    int i,j;
+    EPersona Auxiliar;
 
 
+    for(i=0; i<len-1; i++)
+    {
+        for(j=i+1; j<len; j++)
+        {
+            if(strcmp(lista[i].apellido,lista[j].apellido)>0)
+            {
+                Auxiliar=lista[i];
+                lista[i]=lista[j];
+                lista[j]=Auxiliar;
+            }
+            else if(strcmp(lista[i].apellido,lista[j].apellido)==0 && strcmp(lista[i].nombre,lista[j].nombre)>0)
+            {
+                Auxiliar=lista[i];
+                lista[i]=lista[j];
+                lista[j]=Auxiliar;
+            }
+        }
+    }
+
+    mostrarArrayDeUsuarios(lista,len);
+    system("pause");
 
 }
 
