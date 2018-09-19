@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1537362120 source:d:\rondon\ejerciciosagosto2018\abm-ej\main.c
+	<stdio.h>
+	<stdlib.h>
+	"persona.h"
+
+1537363021 d:\rondon\ejerciciosagosto2018\abm-ej\persona.h
+
+1537362097 source:d:\rondon\ejerciciosagosto2018\abm-ej\persona.c
+	"persona.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
