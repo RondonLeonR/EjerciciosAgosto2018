@@ -238,7 +238,7 @@ void ordenamiento(EPersona lista[],int len)
     {
         for(j=i+1; j<len; j++)
         {
-            if(strcmp(lista[i].apellido,lista[j].apellido)>0)
+            if(strcmp(lista[i].apellido,lista[j].apellido) >0)
             {
                 Auxiliar=lista[i];
                 lista[i]=lista[j];
