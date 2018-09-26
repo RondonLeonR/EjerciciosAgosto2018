@@ -32,7 +32,10 @@ int elegirSector(eSector sectores[], int tam);
 void cargarDescripcion(eSector sectores[],int tamSector,int idSector,char cadena[]);
 void listarEmpleadosPorSector(eEmpleado x[],int tam,eSector sectores[],int tamSector);
 void ordenamientoSectorNombre(eEmpleado empleados[],int tam,eSector sectores[],int tamSector);
+void MayorSueldoPorSector(eEmpleado lista[],int tam, eSector sectores[],int tamSector);
 int menu();
+
+/***7- Gana mas de cada sector***/
 
 int main()
 {
@@ -68,6 +71,10 @@ int main()
             listarEmpleadosPorSector(lista, 10,sectores,5);
             break;
         case 6:
+            ordenamientoSectorNombre(lista,10,sectores,5);
+            break;
+        case 7:
+            MayorSueldoPorSector(lista,10,sectores,5);
             break;
         case 10:
             seguir = 'n';
@@ -134,6 +141,7 @@ int menu()
     printf("4- Listar\n");
     printf("5- Listar todos los empleados de un Sector\n");
     printf("6- Ordenar por Sectores y por Nombres\n");
+    printf("7- Empleado con Mayor Sueldo Por Sector\n");
     printf("10- Salir\n");
     printf("Ingrese opcion: ");
     fflush(stdin);
@@ -335,33 +343,44 @@ void listarEmpleadosPorSector(eEmpleado emp[],int tam,eSector sectores[],int tam
     idSector=elegirSector(sectores,tamSector);
     system("cls");
     printf("Empleados: \n\n");
-    for(i=0;i<tam;i++){
-        if(emp[i].isEmpty==1 &&emp[i].idSector==idSector){
+    for(i=0; i<tam; i++)
+    {
+        if(emp[i].isEmpty==1 &&emp[i].idSector==idSector)
+        {
             mostrarEmpleado(emp[i],sectores,tamSector);
         }
     }
     system("pause");
 }
 
-void hardcodeo(eEmpleado empleados[]){
-    eEmpleado emp[]= {
-    {1111,"Ana",'f',10000,1,1},
-    {2222,"Luis",'m',20000,2,1},
-    {3333,"Laura",'f',30000,1,1}
+void hardcodeo(eEmpleado empleados[])
+{
+    eEmpleado emp[]=
+    {
+        {1111,"Ana",'f',10000,1,1},
+        {2222,"Luis",'m',20000,2,1},
+        {3333,"Laura",'f',30000,1,1},
+        {4444,"Juan",'m',15000,2,1},
+        {5555,"Agustin",'m',30000,1,1}
     };
 
-    for(int i=0;i<5;i++){
+    for(int i=0; i<5; i++)
+    {
         empleados[i]=emp[i];
     }
 }
 
-void ordenamientoSectorNombre(eEmpleado empleados[],int tam,eSector sectores[],int tamSector){
+void ordenamientoSectorNombre(eEmpleado empleados[],int tam,eSector sectores[],int tamSector)
+{
 
     eSector SectorAux;
 
-    for(int i=0;i<tamSector-1;i++){
-        for(int j=i+1;j<tamSector;j++){
-            if(strcmp(sectores[i].descripcion,sectores[j].descripcion)>0){
+    for(int i=0; i<tamSector-1; i++)
+    {
+        for(int j=i+1; j<tamSector; j++)
+        {
+            if(strcmp(sectores[i].descripcion,sectores[j].descripcion)>0)
+            {
                 SectorAux=sectores[i];
                 sectores[i]=sectores[j];
                 sectores[j]=SectorAux;
@@ -370,7 +389,45 @@ void ordenamientoSectorNombre(eEmpleado empleados[],int tam,eSector sectores[],i
         }
     }
 
+}
 
 
+void MayorSueldoPorSector(eEmpleado lista[],int tam, eSector sectores[],int tamSector)
+{
+    float SueldoMay1=0;
+    char descripcion[20];
+    int idSector,idMaySueldo,idMaySueldo2,flag=0;
 
+    idSector=elegirSector(sectores,tamSector);
+    cargarDescripcion(sectores,tamSector,idSector,descripcion);
+
+    system("cls");
+
+    for(int i=0; i<tam; i++)
+    {
+        if(flag==0 || lista[i].sueldo>SueldoMay1 && lista[i].idSector == idSector)
+        {
+            SueldoMay1=lista[i].sueldo;
+            idMaySueldo=i;
+            flag=1;
+            continue;
+        }
+        else if(lista[i].sueldo==SueldoMay1 && lista[i].idSector == idSector)
+        {
+            idMaySueldo2=i;
+        }
+    }
+    printf("Los mayores sueldos del sector: %s\n\n",descripcion);
+
+    for(int i=0; i<tam; i++)
+    {
+        if(lista[i].idSector==idSector)
+        {
+            if(idMaySueldo2==i || idMaySueldo==i)
+            {
+                mostrarEmpleado(lista[i],sectores,tamSector);
+            }
+        }
+    }
+    system("pause");
 }

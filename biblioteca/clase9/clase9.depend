@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1537360657 source:d:\dfernandez\clase9\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../bibliotecasC/persona.h"
+
+1537359419 d:\dfernandez\clase9\persona.h
+
+1537319989 source:d:\dfernandez\clase9\persona.c
+	"persona.h"
+
+1537360657 source:d:\dfernandez\bibliotecasc\persona.c
+	"../bibliotecasC/persona.h"
+
+1537360782 d:\dfernandez\bibliotecasc\persona.h
+
