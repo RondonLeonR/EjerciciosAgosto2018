@@ -19,6 +19,20 @@ typedef struct
     char descripcion[20];
 } eSector;
 
+typedef struct
+{
+    int id;
+    char descripcion[20];
+    int isEmpty;
+}eMenu;
+
+typedef struct
+{
+    int idEmpleado;
+    int idMenu;
+    int isEmpty;
+}eEmpleadoMenu;
+
 void inicializarEmpleados( eEmpleado x[], int tam);
 void hardcodeo(eEmpleado empleados[]);
 int buscarLibre( eEmpleado x[], int tam);
@@ -35,14 +49,14 @@ void ordenamientoSectorNombre(eEmpleado empleados[],int tam,eSector sectores[],i
 void MayorSueldoPorSector(eEmpleado lista[],int tam, eSector sectores[],int tamSector);
 int menu();
 
-/***7- Gana mas de cada sector***/
-
 int main()
 {
 
     char seguir = 's';
     eEmpleado lista[10];
     eSector sectores[] = {{1,"RRHH"},{2,"Ventas"},{3,"Compras"},{4,"Contable"},{5,"Sistemas"}};
+    eMenu menu[]={{1,"Milanesa",0},{2,"Hamburgesa",0}};
+    eEmpleadoMenu[]={{2,1,0},{1,1,0},{3,2,0},{4,2,0}};
 
     inicializarEmpleados(lista, 10);
     hardcodeo(lista);
