@@ -1,0 +1,40 @@
+/***Muchos a Muchos***/
+/**
+    4ta Estructura (AGREGAR)
+    typedef struct{
+        int id;
+        char descripcion[20];
+        int isEmpty; 
+    }eMenu;
+
+    5ta Estructura (Agregar)
+    typedef struct{
+        int idEmpleado;
+        int idMenu;
+        int isEmpty;
+    
+    }eEmpleadoMenu;
+    
+    No empezar recorriendo la estructura eEmpleadoMenu, empezar por la estructura eEmpleado o eMenu.
+    eEmpleadoMenu Recorrerlo en el segundo 'for'.
+    
+     Empleado  x   Menu    = La cantidad de espacio en el array que usa la estructura eEmpleadoMenu.
+    (cantidad)  (cantidad)
+    for(int i=0;i<2;i++)
+    {
+        Ingresar LEGAJO de empleado.
+        for(int j=0;j<4;j++)
+        {
+            if(empMenu[j].idEmpleado == emp[i].id)
+            {
+                for(int k=0;k<2;k++)
+                {
+                    if(menu[k].id==empMenu[j].idMenu)
+                    {
+                        Muestro el Empleado.
+                    }
+                }
+            }
+        }
+    }
+**/
