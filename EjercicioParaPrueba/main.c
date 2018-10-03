@@ -30,7 +30,7 @@ int main()
             MenuesOpci(menues,TAM_MEN);
             break;
         case 2:
-
+            empleadosOpci(emp,TAM_EMP,sectores,5);
             break;
 
         case 3:

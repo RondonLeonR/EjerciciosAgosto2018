@@ -58,11 +58,17 @@ int ModificacionMenu(eMenu men[],int tam);
 int BajaMenu(eMenu men[],int tam);
 int OrdenamientoMenu(eMenu men[],int tam);
 
-
-
-
 void mostrarMenu(eMenu menu);
 void mostrarMenues(eMenu men[],int tam);
+
+void empleadosOpci(eEmployee emp[],int tam,eSector sector[],int tamSec);
+int AltaEmpleado(eEmployee emp[],int tam,eSector sector[],int tamSec);
+int elegirSector(eSector sectores[], int tam);
+
+
+
+
+
 
 
 

@@ -280,7 +280,7 @@ void mostrarMenues(eMenu men[],int tam)
     }
 }
 
-void empleadosOpci(eEmployee emp[],int tam)
+void empleadosOpci(eEmployee emp[],int tam,eSector sector[],int tamSec)
 {
     char seguir='s';
     do
@@ -307,7 +307,65 @@ void empleadosOpci(eEmployee emp[],int tam)
     while(seguir == 's');
 }
 
-int AltaEmpleado(eEmployee emp[],int tam)
+int AltaEmpleado(eEmployee emp[],int tam,eSector sector[],int tamSec)
+{
+    int flag=0;
+    for(int i=0;i<tam;i++)
+    {
+        if(emp[i].isEmpty==LIBRE)
+        {
+            printf("\nIngrese Apellido: ");
+            fflush(stdin);
+            gets(emp[i].Apellido);
+            printf("\nIngrese Nombre: ");
+            fflush(stdin);
+            gets(emp[i].Nombre);
+            printf("\nIngrese Sexo: m ò f");
+            fflush(stdin);
+            scanf("%c",&emp[i].sexo);
+            printf("\nIngrese su Salario: ");
+            scanf("%f",&emp[i].salario);
+            printf("Ingrese Fecha de Ingreso: ");
+            printf("Dia: ");
+            scanf("%d",&emp[i].fecha.dia);
+            printf("Mes: ");
+            scanf("%d",&emp[i].fecha.mes);
+            printf("Anio: ");
+            scanf("%d",&emp[i].fecha.anio);
+
+            emp[i].idSector=elegirSector(sector,tamSec);
+            emp[i].isEmpty=OCUP;
+            flag=1;
+
+            printf("\n\nAgregado al Menu.\n");
+            system("pause");
+            break;
+        }
+    }
+
+    if(flag==0)
+    {
+        system("cls");
+        printf("\n\n\tNo hay mas Lugar.\n\n");
+        system("pause");
+    }
+    return 0;
+}
+
+
+int elegirSector(eSector sectores[], int tam)
 {
 
+    int i,idSector;
+
+    printf("\nSectores \n\n");
+    for(i=0; i<tam; i++)
+    {
+        printf("%d %s\n",sectores[i].id,sectores[i].descripcion);
+
+    }
+    printf("\nSeleccione sector: ");
+    scanf("%d",&idSector);
+
+    return idSector;
 }
