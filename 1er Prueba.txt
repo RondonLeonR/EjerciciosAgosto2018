@@ -1,0 +1,5 @@
+Bibliotecas:
+	utn
+	Producto  |Negocio(Se puede hacer las 2 estructuras en un solo .c)
+	Proveedor |
+

@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1538574892 source:d:\rondon\ejerciciosagosto2018\ejercicioparaprueba\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"Negocio.h"
+
+1538578464 d:\rondon\ejerciciosagosto2018\ejercicioparaprueba\negocio.h
+
+1538578556 source:d:\rondon\ejerciciosagosto2018\ejercicioparaprueba\negocio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"Negocio.h"
+
