@@ -121,7 +121,7 @@ void MenuesOpci(eMenu menu[],int tamMen)
 int AltaMenu(eMenu men[],int tam)
 {
     int flag=0;
-    for(int i=0;i<tam;i++)
+    for(int i=0; i<tam; i++)
     {
         if(men[i].isEmpty==LIBRE && flag==0)
         {
@@ -157,7 +157,7 @@ int ModificacionMenu(eMenu men[],int tam)
     printf("\n\nIngrese el ID del Menu a Modificar: ");
     scanf("%d",&opc);
     system("cls");
-    for(i=0;i<tam;i++)
+    for(i=0; i<tam; i++)
     {
         if(men[i].id==opc)
         {
@@ -210,7 +210,7 @@ int BajaMenu(eMenu men[],int tam)
     printf("\n\nIngrese el ID del Menu a dar de Baja: ");
     scanf("%d",&opc);
 
-    for(int i=0;i<tam;i++)
+    for(int i=0; i<tam; i++)
     {
         if(men[i].id==opc)
         {
@@ -241,9 +241,9 @@ int OrdenamientoMenu(eMenu men[],int tam)
 {
     eMenu menAux;
 
-    for(int i=0;i<tam-1;i++)
+    for(int i=0; i<tam-1; i++)
     {
-        for(int j=i+1;j<tam;j++)
+        for(int j=i+1; j<tam; j++)
         {
             if(men[i].importe<men[j].importe)
             {
@@ -271,7 +271,7 @@ void mostrarMenu(eMenu menu)
 void mostrarMenues(eMenu men[],int tam)
 {
     printf("ID     Menu     Importe\n");
-    for(int i=0;i<tam;i++)
+    for(int i=0; i<tam; i++)
     {
         if(men[i].isEmpty==OCUP)
         {
@@ -310,7 +310,7 @@ void empleadosOpci(eEmployee emp[],int tam,eSector sector[],int tamSec)
 int AltaEmpleado(eEmployee emp[],int tam,eSector sector[],int tamSec)
 {
     int flag=0;
-    for(int i=0;i<tam;i++)
+    for(int i=0; i<tam; i++)
     {
         if(emp[i].isEmpty==LIBRE)
         {

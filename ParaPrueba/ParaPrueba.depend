@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1538914892 source:c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\library\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1538917285 source:c:\users\user\desktop\paraprueba\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../EjerciciosAgosto2018/EjerciciosAgosto2018/Library/input.h"
+
+1538911981 c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\library\input.h
+

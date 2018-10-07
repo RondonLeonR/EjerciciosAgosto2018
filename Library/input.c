@@ -14,13 +14,23 @@
 */
 int getInt(int* input,char message[],char eMessage[], int lowLimit, int hiLimit)
 {
-    //.........
-    //.........
-    //.........
-    //.........
+    int flag=1;
+    do
+    {
+        printf("%s",message);
+        scanf("%d",input);
 
+        if((*input)>=lowLimit  && (*input)<=hiLimit)
+        {
+            flag=0;
+        }
+        else
+        {
+            printf("%s",eMessage);
+        }
+    }
+    while(flag==1);
 
-    *input = 44;
     return 0;
 }
 
@@ -36,12 +46,22 @@ int getInt(int* input,char message[],char eMessage[], int lowLimit, int hiLimit)
 */
 int getFloat(float* input,char message[],char eMessage[], float lowLimit, float hiLimit)
 {
-    //.........
-    //.........
-    //.........
-    //.........
+    int flag=1;
+    do
+    {
+        printf("%s",message);
+        scanf("%f",input);
 
-    *input = 1234.88;
+        if((*input)>=lowLimit  && (*input)<=hiLimit)
+        {
+            flag=0;
+        }
+        else
+        {
+            printf("%s",eMessage);
+        }
+    }
+    while(flag==1);
     return 0;
 }
 
@@ -58,12 +78,24 @@ int getFloat(float* input,char message[],char eMessage[], float lowLimit, float 
 */
 int getChar(char* input,char message[],char eMessage[], char lowLimit, char hiLimit)
 {
-    //.........
-    //.........
-    //.........
-    //.........
+    int flag=1;
+    do
+    {
+        printf("%s",message);
+        fflush(stdin);
+        scanf("%c",input);
 
-    *input = 'S';
+        if((*input)>=lowLimit  && (*input)<=hiLimit)
+        {
+            flag=0;
+        }
+        else
+        {
+            printf("%s",eMessage);
+        }
+    }
+    while(flag==1);
+
     return 0;
 }
 
@@ -80,11 +112,29 @@ int getChar(char* input,char message[],char eMessage[], char lowLimit, char hiLi
 */
 int getString(char* input,char message[],char eMessage[], int lowLimit, int hiLimit)
 {
-    //.........
-    //.........
-    //.........
-    //.........
+    int flag=1;
+    int len;
+    char x[hiLimit];
 
-    strcpy(input,"Sheldon");
+    do
+    {
+        printf("%s",message);
+        fflush(stdin);
+        gets(x);
+
+        len= strlen(x);
+
+        if(len>=lowLimit  && len<=hiLimit)
+        {
+            flag=0;
+            strcpy(input,x);
+        }
+        else
+        {
+            printf("%s",eMessage);
+        }
+    }
+    while(flag==1);
+
     return 0;
 }
