@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1539010146 source:d:\rondon\ejerciciosagosto2018\prueba\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"Funciones.h"
+	"input.h"
+
+1539010064 source:d:\rondon\ejerciciosagosto2018\prueba\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Funciones.h"
+
+1539009591 d:\rondon\ejerciciosagosto2018\prueba\funciones.h
+
+1539001388 source:d:\rondon\ejerciciosagosto2018\prueba\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1538999324 d:\rondon\ejerciciosagosto2018\prueba\input.h
+
