@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "Funciones.h"
 
-#define CANTJ 5
+#define CANTJ 10
 #define CANTC 10
 #define CANTAL 50
 
@@ -51,6 +51,9 @@ int main()
 
             break;
         case 4:
+            informar(alquileres,CANTAL,juegos,CANTJ,clientes,CANTC);
+            break;
+        case 5:
             seguir = 'n';
             break;
         }

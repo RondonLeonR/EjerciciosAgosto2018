@@ -40,6 +40,8 @@ typedef struct{
  */
 int menu();
 int menuABM();
+int menuInformes();
+
 
 void initJuego(eJuego list[],int len);
 void initCliente(eCliente list[],int len);
@@ -68,12 +70,20 @@ void mostrarClientes(eCliente list[],int len);
 
 void alquileresJ(eAlquiler list[],int len,eCliente listCl[],int lenCl,eJuego listJu[],int lenJu);
 
+void informar(eAlquiler listAlq[],int lenAlq, eJuego listJue[],int lenJue,eCliente listCli[],int lenCli);
+int Informe1(eAlquiler listAlq[],int lenAlq, eJuego listJue[],int lenJue);
+int Informe2(eJuego listJue[],int lenJue);
+int Informe3(eAlquiler listAlq[],int lenAlq, eJuego listJue[],int lenJue,eCliente listCli[],int lenCli);
+int Informe4(eAlquiler listAlq[],int lenAlq, eJuego listJue[],int lenJue,eCliente listCli[],int lenCli);
+int Informe5(eAlquiler listAlq[],int lenAlq,eJuego listJue[],int lenJue);
+void Informe9(eJuego list[],int len);
+void Informe10(eCliente list[],int len);
 
 
 
 
 
-
+//void hardcodeoJuegos(eJuego list[]);
 
 
 #endif // FUNCIONES_H_INCLUDED
