@@ -76,14 +76,10 @@ int Informe2(eJuego listJue[],int lenJue);
 int Informe3(eAlquiler listAlq[],int lenAlq, eJuego listJue[],int lenJue,eCliente listCli[],int lenCli);
 int Informe4(eAlquiler listAlq[],int lenAlq, eJuego listJue[],int lenJue,eCliente listCli[],int lenCli);
 int Informe5(eAlquiler listAlq[],int lenAlq,eJuego listJue[],int lenJue);
+void Informe7(eAlquiler listAl[],int lenAl,eJuego listJue[],int lenJue);
 void Informe9(eJuego list[],int len);
 void Informe10(eCliente list[],int len);
 
-
-
-
-
-//void hardcodeoJuegos(eJuego list[]);
 
 
 #endif // FUNCIONES_H_INCLUDED
