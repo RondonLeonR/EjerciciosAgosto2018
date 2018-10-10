@@ -183,9 +183,8 @@ int AltaJuego(eJuego list[],int len)
         {
             getString(descrip,"Ingrese Descripcion Del Juego: ","Cantidad de Caracteres excedida\n",0,51);
             strcpy(list[i].descripcion,descrip);
-            //getFloat(&importe,"Ingrese Importe del Juego: ","El importe es menor que cero\n",1,1000);
-            printf("Ingrese Importe: ");
-            scanf("%f",&list[i].importe);
+            getFloat(&importe,"Ingrese Importe del Juego: ","El importe es menor que cero\n",1.00,1000.00);
+            list[i].importe=importe;
             list[i].isEmpty=OCUP;
             flag=1;
 
