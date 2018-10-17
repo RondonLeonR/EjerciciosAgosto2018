@@ -16,3 +16,11 @@ Puntero |
 0x100   + 2 . sizeof(int)
 0x100   + 8
 0x108
+ -------------- . ----------------
+
+USANDO PUNTEROS A ESTRUCTURAS
+
+punteroAlumno->nota  // (* punteroAlumno).nota 
+
+
+punteroAlumno[2]->nota  // (*(punteroAlumno + 2)).nota
