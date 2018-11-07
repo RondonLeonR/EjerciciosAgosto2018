@@ -83,7 +83,7 @@ int employee_setNombre(Employee* this,char* nombre)
 
 int employee_getNombre(Employee* this,char* nombre)
 {
-    *nombre = this->nombre;
+    strcpy(nombre,this->nombre);
     return 1;
 }
 

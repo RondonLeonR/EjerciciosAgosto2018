@@ -104,6 +104,74 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
+    Employee *this = employee_new();
+    int i,r,opc,idAux,horasAux,tam;
+    char nombreAux[50];
+    float sueldoAux;
+    controller_ListEmployee(pArrayListEmployee);
+    printf("\n\n\tIngrese ID del usuario a Modificar: ");
+    scanf("%d",&r);
+    tam = ll_len(pArrayListEmployee);
+    for(i=0; i<tam; i++)
+    {
+        if(i==r)//TERMINAR//
+        {
+            //if()
+
+                this = (Employee*)ll_get(pArrayListEmployee,i);
+        }
+    }
+    system("cls");
+    if(this != NULL)
+    {
+        do
+        {
+            printf("1- Modificar ID\n");
+            printf("2- Modificar Nombre\n");
+            printf("3- Modificar Horas Trabajadas\n");
+            printf("4- Modificar Sueldo\n");
+            printf("5- Cancelar\n\n");
+            printf("Seleccione opcion\n");
+            scanf("%d",&opc);
+
+            switch(opc)
+            {
+            case 1:
+                printf("\n\nIngrese nuevo ID: ");
+                scanf("%d",&idAux);
+                employee_setId(this,idAux);
+                break;
+            case 2:
+                printf("\n\nIngrese nuevo Nombre: ");
+                gets(nombreAux);
+                employee_setNombre(this,nombreAux);
+                break;
+            case 3:
+                printf("\n\nIngrese nuevas Horas Trabajadas: ");
+                scanf("%d",&horasAux);
+                employee_setHorasTrabajadas(this,horasAux);
+                break;
+            case 4:
+                printf("\n\nIngrese nuevo Sueldo: ");
+                scanf("%f",&sueldoAux);
+                employee_setSueldo(this,sueldoAux);
+                break;
+            case 5:
+                system("cls");
+                printf("\tOperacion Cancelada\n\n");
+                system("pause");
+                break;
+            }
+        }
+        while(opc<5 && opc>0);
+    }
+    else
+    {
+        system("cls");
+        printf("\nEl ID ingresado no Existe\n\n");
+        system("pause");
+    }
+
     return 1;
 }
 
@@ -116,6 +184,13 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
+    Employee *this = employee_new();
+    int r;
+
+    controller_ListEmployee(pArrayListEmployee);
+    printf("\nIngrese el ID que desea Borrar: ");
+    scanf("%d",&r);
+
     return 1;
 }
 
@@ -129,15 +204,24 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
     Employee* this;
-    int i,tam;
+    int i,tam,idAux,HorasAux;
+    char nombreAux[50];
+    float sueldoAux;
+
     tam = ll_len(pArrayListEmployee);
-    printf(" ID       NAME    HOURS    SALARY\n");
+
+    printf("  ID     NAME     HOURS    SALARY\n");
     for(i=0; i<tam; i++)
     {
         this = (Employee*)ll_get(pArrayListEmployee,i);
-        printf("%4d %10s   %4d   %6.2f\n",this->id,this->nombre,this->horasTrabajadas,this->sueldo);
+        employee_getId(this,&idAux);
+        employee_getNombre(this,nombreAux);
+        employee_getHorasTrabajadas(this,&HorasAux);
+        employee_getSueldo(this,&sueldoAux);
+
+        printf("%4d %10s   %4d   %6.2f\n",idAux,nombreAux,HorasAux,sueldoAux);
     }
-    system("pause");
+
     return 1;
 }
 
@@ -164,9 +248,9 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
 {
     FILE *pFile;
     Employee *this = employee_new();
-    int tam,i;
-    char var1[50],var2[50],var3[50],var4[50];
-
+    int tam,i,idAux,horasAux;
+    float sueldoAux;
+    char nombreAux[50];
 
     pFile = fopen(path,"w");
     tam = ll_len(pArrayListEmployee);
@@ -182,8 +266,12 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
     for(i=0; i<tam; i++)
     {
         this = (Employee*)ll_get(pArrayListEmployee,i);
+        employee_getId(this,&idAux);
+        employee_getNombre(this,nombreAux);
+        employee_getHorasTrabajadas(this,&horasAux);
+        employee_getSueldo(this,&sueldoAux);
         fflush(stdin);
-        fwrite(this,sizeof(Employee),1,pFile);
+        fprintf(pFile,"%d,%s,%d,%.2f\n",idAux,nombreAux,horasAux,sueldoAux);
     }
 
     fclose(pFile);
