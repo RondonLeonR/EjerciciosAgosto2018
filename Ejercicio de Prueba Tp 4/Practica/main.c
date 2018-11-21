@@ -7,6 +7,7 @@
 int main()
 {
     LinkedList* listaPersonas = ll_newLinkedList();
+    LinkedList* nuevaLista = NULL;
     int flag =1,opc,len;
 
     do{
@@ -25,7 +26,9 @@ int main()
             mostrarLista(listaPersonas);
             break;
         case 3:
-            prueba(listaPersonas);
+            //prueba(listaPersonas);
+            nuevaLista = filter(listaPersonas,filterBySalary);
+            mostrarLista(nuevaLista);
             break;
         case 5:
             flag=0;
@@ -35,5 +38,6 @@ int main()
     }while(flag==1);
 
     ll_deleteLinkedList(listaPersonas);
+    ll_deleteLinkedList(nuevaLista);
     return 0;
 }

@@ -16,6 +16,10 @@ void mostrarLista(LinkedList *this);
 
 int prueba(LinkedList* this);
 
+LinkedList* filter(LinkedList* this, int (*pFunc)(void*));
+int filterBySalary(ePersona* this);
+
+
 
 
 #endif // FUNCIONES_H_INCLUDED

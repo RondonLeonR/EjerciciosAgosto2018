@@ -32,8 +32,7 @@ ePersona* nuevaPersona()
 int agregarPersona(LinkedList* this)
 {
     ePersona* Persona = nuevaPersona();
-    int idAux;
-    char nombreAux[50],direccionAux[60];
+    char nombreAux[50];
     float importe;
 
     if(this != NULL && Persona != NULL )
@@ -58,38 +57,84 @@ void mostrarLista(LinkedList *this)
     ePersona* Persona = NULL;
     int len = ll_len(this);
     system("cls");
-    printf("Cantidad de Personas en la lista: %d\n\n",len);
-    for(int i=0;i<len;i++)
+    if(this != NULL && len>0)
     {
-        Persona = ll_get(this,i);
-        printf("%d %s %.2f\n",Persona->id,Persona->nombre,Persona->sueldo);
+        printf("Cantidad de Personas en la lista: %d\n\n",len);
+        for(int i=0;i<len;i++)
+        {
+            Persona = ll_get(this,i);
+            printf("%d %s %.2f\n",Persona->id,Persona->nombre,Persona->sueldo);
+        }
+        system("pause");
     }
-    system("pause");
+    else{
+        printf("La lista no existe");
+        system("pause");
+    }
+
 }
+
+
+
+
 
 int prueba(LinkedList* this)
 {
-    /*ePersona* persona = nuevaPersona();
+    ePersona* persona = nuevaPersona();
     int len = ll_len(this);
+    int aux;
     if(this != NULL)
     {
         for(int i=0;i<len;i++)
         {
-            if(i == 2)
+            if(i==2)
             {
-                ll_remove(this,i);
+                persona = ll_get(this,i);
+                aux=ll_contains(this,persona);
+                if(aux == 1)
+                {
+                    printf("EL ELEMENTO EXISTE");
+                    system("pause");
+                }
             }
         }
-    }*/
+    }
 
-    if(ll_clear(this) == 0)
-    {
-        printf("Se limpio la lista con exito");
-        system("pause");
-    }
-    else
-    {
-        printf("Hubo un error al limpiar la lista");
-    }
+
+
     return 0;
+}
+
+int filterBySalary(ePersona* this)
+{
+    int retorno =0;
+
+    if(this->sueldo > 1000.00)
+    {
+        retorno = 1;
+    }
+
+    return retorno;
+}
+
+LinkedList* filter(LinkedList* this, int (*pFunc)(void*))
+{
+    LinkedList* newLista = ll_newLinkedList();
+    ePersona* persona = NULL;
+    int len;
+    printf("asdasa");
+    system("pause");
+    if(this != NULL)
+    {
+        len = ll_len(this);
+        for(int i=0;i<len;i++)
+        {
+            persona=ll_get(this,i);
+            if(pFunc(persona) == 1)
+            {
+                ll_add(newLista,persona);
+            }
+        }
+    }
+    return newLista;
 }

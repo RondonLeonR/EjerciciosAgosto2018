@@ -282,7 +282,6 @@ int ll_deleteLinkedList(LinkedList* this)
     if(this!=NULL)
     {
         ll_clear(this);
-        free(this);
         returnAux = 0;
     }
     return returnAux;
@@ -546,4 +545,6 @@ int ll_sort(LinkedList* this, int (*pFunc)(void*,void*), int order)
     return returnAux;
 
 }
+
+
 
