@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1542768025 source:c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\ejercicio de prueba tp 4\practica\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1542757046 c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\ejercicio de prueba tp 4\practica\linkedlist.h
+
+1542766270 source:c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\ejercicio de prueba tp 4\practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Funciones.h"
+	"../../Library/input.h"
+
+1542766016 c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\ejercicio de prueba tp 4\practica\funciones.h
+
+1542762431 source:c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\library\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1542757046 c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\library\input.h
+
+1542766270 source:c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\ejercicio de prueba tp 4\practica\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Funciones.h"
+	"../../Library/input.h"
+

@@ -21,17 +21,17 @@
 
 1538999324 d:\rondon\ejerciciosagosto2018\prueba\input.h
 
-1539136422 source:c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\rondon\input.c
+1542757046 source:c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\rondon\input.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1539136422 source:c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\rondon\main.c
+1542757046 source:c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\rondon\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Funciones.h"
 
-1539136422 c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\rondon\funciones.h
+1542757046 c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\rondon\funciones.h
 
 1539171977 source:d:\rondon\ejerciciosagosto2018\rondon\input.c
 	<stdio.h>
@@ -54,4 +54,14 @@
 	<stdio.h>
 	<stdlib.h>
 	"Funciones.h"
+
+1542757046 source:c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\rondon\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"Funciones.h"
+	"input.h"
+
+1542757046 c:\users\user\desktop\ejerciciosagosto2018\ejerciciosagosto2018\rondon\input.h
 

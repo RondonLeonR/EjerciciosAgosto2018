@@ -46,15 +46,17 @@ int getInt(int* input,char message[],char eMessage[], int lowLimit, int hiLimit)
 */
 int getFloat(float* input,char message[],char eMessage[], float lowLimit, float hiLimit)
 {
+    float x;
     int flag=1;
     do
     {
         printf("%s",message);
-        scanf("%f",input);
+        scanf("%f",&x);
 
-        if((*input)>=lowLimit  && (*input)<=hiLimit)
+        if(x>=lowLimit  && x<=hiLimit)
         {
             flag=0;
+            *input=x;
         }
         else
         {
