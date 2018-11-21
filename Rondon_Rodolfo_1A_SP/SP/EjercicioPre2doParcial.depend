@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1542807592 source:d:\rondon\ejerciciosagosto2018\rondon_rodolfo_1a_sp\sp\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Empleado.h"
+	"input.h"
+
+1542806206 d:\rondon\ejerciciosagosto2018\rondon_rodolfo_1a_sp\sp\empleado.h
+
+1542802010 source:d:\rondon\ejerciciosagosto2018\rondon_rodolfo_1a_sp\sp\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1542805973 source:d:\rondon\ejerciciosagosto2018\rondon_rodolfo_1a_sp\sp\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1542805862 d:\rondon\ejerciciosagosto2018\rondon_rodolfo_1a_sp\sp\linkedlist.h
+
+1542807613 source:d:\rondon\ejerciciosagosto2018\rondon_rodolfo_1a_sp\sp\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Empleado.h"
+	"LinkedList.h"
+	"Parser.h"
+	"input.h"
+
+1542801520 d:\rondon\ejerciciosagosto2018\rondon_rodolfo_1a_sp\sp\parser.h
+	"LinkedList.h"
+
+1542807360 source:d:\rondon\ejerciciosagosto2018\rondon_rodolfo_1a_sp\sp\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"input.h"
+	"Empleado.h"
+
+1542802010 d:\rondon\ejerciciosagosto2018\rondon_rodolfo_1a_sp\sp\input.h
+

@@ -31,3 +31,8 @@
 	"Funciones.h"
 	"../../Library/input.h"
 
+1542802010 source:d:\rondon\ejerciciosagosto2018\library\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
